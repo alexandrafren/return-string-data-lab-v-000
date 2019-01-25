@@ -10,9 +10,9 @@
 <script type="text/javascript" charset="utf-8">
 $(function () {
   $(".js-more").on('click', function() {
-    // get the id from the data attribute
     let id = $(this).data("id");
-    $.get("/posts/" + id + "/description", function(data) {
+    $.get("/posts/" + id + "/body", function(data) {
+      // Replace text of body-id div
       $("#body-" + id).text(data);
     });
   });
