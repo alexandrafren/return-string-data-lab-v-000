@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
 
   def create
     Product.create(product_params)
-    render 'products/index'
+    redirect_to products_path
   end
 
 private
