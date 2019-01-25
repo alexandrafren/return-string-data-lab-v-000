@@ -1,4 +1,4 @@
-<%= @products.each do |p| %>
+<% @products.each do |p| %>
   <%= p.name %>
   <div id="body-<%=p.id%>">
     <%= truncate p.description %>
