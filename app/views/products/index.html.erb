@@ -8,11 +8,11 @@
 
 
 <script type="text/javascript" charset="utf-8">
-  $(function()) {
+  $(function() {
     $(".js-more").on('click', function() {
       let id = $(this).data("id");
       $.get("/products" + id + "/body", function(data){
-
-      })
-    })
-  }
+        $("#body-" + id).text(data);
+      });
+    });
+  });
