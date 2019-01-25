@@ -23,6 +23,7 @@ class ProductsController < ApplicationController
     else
       @value = "false"
     end
+    render plain: @value
   end
 
 private
