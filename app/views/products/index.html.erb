@@ -24,7 +24,7 @@
     $(".js-inventory").on('click', function(){
       let id = $(this).data("id");
       $.get("/products" + id + "/inventory", function(data){
-        $("body-" + id).text(@value);
+        $("body-" + id).text(data);
       });
     });
   });
