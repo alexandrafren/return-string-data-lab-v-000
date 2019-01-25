@@ -8,6 +8,7 @@ class ProductsController < ApplicationController
 
   def create
     Product.create(product_params)
+    render index
   end
 
 private
