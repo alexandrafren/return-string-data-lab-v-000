@@ -6,4 +6,8 @@ class ProductsController < ApplicationController
   def new
   end
 
+  def create
+    Product.create(params)
+  end
+
 end
