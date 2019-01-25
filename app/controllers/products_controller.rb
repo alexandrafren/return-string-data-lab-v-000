@@ -7,11 +7,11 @@ class ProductsController < ApplicationController
   end
 
   def create
-    Product.create(name: params[name], )
+    Product.create(products_params)
   end
 
 private
-  def products_params
+  def product_params
     params.require(:product).permit(:name, :price, :description, :inventory)
 
 end
