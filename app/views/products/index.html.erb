@@ -24,7 +24,8 @@ $(function () {
     $(".js-inventory").on('click', function(){
       let id = $(this).data("id");
       $.get("/products" + id + "/inventory", function(data){
-        $("#body-" + id).text(data);
+        if data = "true"
+          $("#body-" + id).text("Available");
       });
     });
   });
