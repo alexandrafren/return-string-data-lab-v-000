@@ -1,6 +1,7 @@
 <% @products.each do |p| %>
   <%= p.name %>
   <div id="description-<%=p.id%>"><%= truncate p.description %></div>
+  <div id="description-<%=p.id%>"><%= truncate p.description %></div>
   <button class="js-more" data-id="<%=p.id%>">More Info</button>
   <br />
 <% end %>
@@ -14,21 +15,13 @@ $(function () {
       // Replace text of body-id div
       $("#description-" + id).text(data);
     });
+    $.get("/products" + id + "/inventory", function(data){
+      if data = "true" {
+        $("#body-" + id).text("Available");
+      else {
+        $("#body-" + id).text("Sold Out");
+        }
+    });
   });
 });
 </script>
-
-<script type="text/javascript" charset="utf-8">
-  $(function(){
-    $(".js-inventory").on('click', function(){
-      let id = $(this).data("id");
-      $.get("/products" + id + "/inventory", function(data){
-        if data = "true" {
-          $("#body-" + id).text("Available");
-        else {
-          $("#body-" + id).text("Sold Out");
-          }
-      });
-    });
-  });
-  </script>
