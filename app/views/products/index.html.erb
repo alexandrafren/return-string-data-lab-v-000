@@ -12,9 +12,20 @@
   $(function() {
     $(".js-more").on('click', function() {
       let id = $(this).data("id");
-      $.get("/products" + id + "/body", function(data){
+      $.get("/products" + id + "/description", function(data){
         $("#body-" + id).text(data);
       });
     });
   });
 </script>
+
+<script type="text/javascript" charset="utf-8">
+  $(function(){
+    $(".js-inventory").on('click', function(){
+      let id = $(this).data("id");
+      $.get("/products" + id + "/inventory", function(data){
+        $("body-" + id).text(data);
+      });
+    });
+  });
+  </script>
