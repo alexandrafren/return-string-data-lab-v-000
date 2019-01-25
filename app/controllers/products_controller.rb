@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
     if inventory.inventory > 0
       render "true"
     else
-      return "false"
+      render "false"
     end
   end
 
